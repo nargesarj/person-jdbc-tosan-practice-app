@@ -23,7 +23,7 @@ public class JdbcConnection {
 			connection = DriverManager.getConnection(jdbcUrl, user, pass);
 			statement = connection.createStatement();
 		} catch (Exception e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 	}
 

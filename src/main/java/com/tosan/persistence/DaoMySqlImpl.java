@@ -23,7 +23,7 @@ public class DaoMySqlImpl
 						resultSet.getInt("score")));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -40,7 +40,7 @@ public class DaoMySqlImpl
 						resultSet.getInt("score")));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -57,7 +57,7 @@ public class DaoMySqlImpl
 						resultSet.getInt("score")));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -75,7 +75,7 @@ public class DaoMySqlImpl
 						resultSet.getInt("score")));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -95,7 +95,7 @@ public class DaoMySqlImpl
 						resultSet.getInt("score")));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -112,7 +112,7 @@ public class DaoMySqlImpl
 					resultSet.getString("last_name"), resultSet.getDate("birth_date"), resultSet.getInt("gender"),
 					resultSet.getInt("score"));
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return max;
 	}
@@ -128,7 +128,7 @@ public class DaoMySqlImpl
 					resultSet.getString("last_name"), resultSet.getDate("birth_date"), resultSet.getInt("gender"),
 					resultSet.getInt("score"));
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return min;
 	}
@@ -144,7 +144,7 @@ public class DaoMySqlImpl
 			resultSet.next();
 			avg = resultSet.getDouble("avg");
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return avg;
 	}
@@ -161,7 +161,7 @@ public class DaoMySqlImpl
 			resultSet.next();
 			count = resultSet.getInt("count");
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return count;
 	}
@@ -178,7 +178,7 @@ public class DaoMySqlImpl
 				list.add(new CountAvgResult(resultSet.getInt("cnt"), resultSet.getDouble("age")));
 			}
 		} catch (Exception e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -196,7 +196,7 @@ public class DaoMySqlImpl
 				list.add(new GenderAndAvgResult(resultSet.getInt("gender"), resultSet.getDouble("avg")));
 			}
 		} catch (Exception e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -213,7 +213,7 @@ public class DaoMySqlImpl
 				list.add(new GenderAndCntResult(resultSet.getInt("gender"), resultSet.getInt("cnt")));
 			}
 		} catch (Exception e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -232,7 +232,7 @@ public class DaoMySqlImpl
 						resultSet.getDouble("avg")));
 			}
 		} catch (Exception e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
@@ -250,7 +250,7 @@ public class DaoMySqlImpl
 						resultSet.getInt("score")));
 			}
 		} catch (Exception e) {
-			throw new RuntimeException();
+			throw new RuntimeException(e);
 		}
 		return list;
 	}
