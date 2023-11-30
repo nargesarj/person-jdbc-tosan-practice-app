@@ -2,7 +2,7 @@ package com.tosan.presentation;
 
 import java.util.List;
 
-import com.tosan.application.PersonService;
+import com.tosan.service.PersonService;
 
 public class MyApp {
 

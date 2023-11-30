@@ -1,4 +1,4 @@
-package com.tosan.persistence;
+package com.tosan.persistence.daoimpl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,8 +6,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tosan.persistence.dao.PersonDao;
+import com.tosan.persistence.entity.AgeAndGenderAndAverageResult;
+import com.tosan.persistence.entity.CountAvgResult;
+import com.tosan.persistence.entity.GenderAndAvgResult;
+import com.tosan.persistence.entity.GenderAndCntResult;
+import com.tosan.persistence.entity.Person;
+
 public class DaoMySqlImpl
-		implements Dao<Person, CountAvgResult, GenderAndAvgResult, GenderAndCntResult, AgeAndGenderAndAverageResult> {
+		implements PersonDao<Person, CountAvgResult, GenderAndAvgResult, GenderAndCntResult, AgeAndGenderAndAverageResult> {
 
 	private static final int resultSet = 0;
 

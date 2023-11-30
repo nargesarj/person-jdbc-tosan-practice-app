@@ -1,8 +1,10 @@
-package com.tosan.persistence;
+package com.tosan.persistence.dao;
 
 import java.util.List;
 
-public interface Dao<T, V, E, K, L> {
+import com.tosan.persistence.entity.Person;
+
+public interface PersonDao<T, V, E, K, L> {
 
 	List<T> startsWith(String column, String searchItem);
 

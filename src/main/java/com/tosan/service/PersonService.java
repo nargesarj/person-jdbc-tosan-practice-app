@@ -1,18 +1,18 @@
-package com.tosan.application;
+package com.tosan.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tosan.persistence.AgeAndGenderAndAverageResult;
-import com.tosan.persistence.CountAvgResult;
-import com.tosan.persistence.Dao;
-import com.tosan.persistence.DaoMySqlImpl;
-import com.tosan.persistence.GenderAndAvgResult;
-import com.tosan.persistence.Person;
+import com.tosan.persistence.dao.PersonDao;
+import com.tosan.persistence.daoimpl.DaoMySqlImpl;
+import com.tosan.persistence.entity.AgeAndGenderAndAverageResult;
+import com.tosan.persistence.entity.CountAvgResult;
+import com.tosan.persistence.entity.GenderAndAvgResult;
+import com.tosan.persistence.entity.Person;
 
 public class PersonService {
 
-	private Dao dao = new DaoMySqlImpl();
+	private PersonDao dao = new DaoMySqlImpl();
 
 	public List<String> getPersonInfoListFirstNameStartsWithALetter() {
 		List<Person> list = dao.startsWith("first_name", "A");

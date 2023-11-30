@@ -1,4 +1,4 @@
-package com.tosan.persistence;
+package com.tosan.persistence.entity;
 
 public class GenderAndAvgResult {
 
