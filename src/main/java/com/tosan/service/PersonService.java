@@ -1,5 +1,6 @@
 package com.tosan.service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -129,5 +130,26 @@ public class PersonService {
 			strList.add(person.toString());
 		}
 		return strList;
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void insertDefaultPersonList() {
+		List<Person> list = new ArrayList<>();
+		list.add(new Person("John", "Johni", new Date(1796, 5, 2), 1, 20));
+		list.add(new Person("Faz", "Johni", new Date(1896, 6, 20), 1, 10));
+		list.add(new Person("Nol", "Johni", new Date(1996, 1, 6), 2, 8));
+		list.add(new Person("Jack", "Johni", new Date(1990, 10, 21), 1, 15));
+		list.add(new Person("Sara", "Johni", new Date(2017, 11, 21), 2, 12));
+		list.add(new Person("My", "Johni", new Date(2002, 12, 28), 1, 18));
+		list.add(new Person("Why", "Johni", new Date(2017, 1, 2), 1, 14));
+		list.add(new Person("Edvrd", "Johni", new Date(2000, 4, 6), 2, 19));
+		list.add(new Person("John", "Johni", new Date(1740, 5, 10), 2, 12));
+		list.add(new Person("July", "Johni", new Date(1885, 8, 4), 1, 17));
+		
+		dao.save(list);
+	}
+	
+	public void dropAllPersons() {
+		dao.drop();
 	}
 }

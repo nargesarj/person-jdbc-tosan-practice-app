@@ -13,10 +13,9 @@ import com.tosan.persistence.entity.GenderAndAvgResult;
 import com.tosan.persistence.entity.GenderAndCntResult;
 import com.tosan.persistence.entity.Person;
 
-public class DaoMySqlImpl
-		implements PersonDao<Person, CountAvgResult, GenderAndAvgResult, GenderAndCntResult, AgeAndGenderAndAverageResult> {
+public class DaoMySqlImpl implements
+		PersonDao<Person, CountAvgResult, GenderAndAvgResult, GenderAndCntResult, AgeAndGenderAndAverageResult> {
 
-	private static final int resultSet = 0;
 
 	public List<Person> startsWith(String column, String searchItem) {
 		List<Person> list = new ArrayList<>();
@@ -260,5 +259,32 @@ public class DaoMySqlImpl
 			throw new RuntimeException(e);
 		}
 		return list;
+	}
+
+	@Override
+	public void save(List<Person> list) {
+		for (Person item : list) {
+			String sql = "INSERT INTO persons (first_name, last_name, birth_date, gender, score) VALUES ('"
+					+ item.getFirstName() + "', '" + item.getLastName() + "', '" + item.getBirthdate() + "', '"
+					+ item.getGender() + "', '" + item.getScore() + "');";
+			System.out.println(sql);
+			try {
+				JdbcConnection.getJdbcConnection().statement.executeUpdate(sql);
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+		}
+	}
+
+	@Override
+	public void drop() {
+		String sql = "Truncate persons";
+		System.out.println(sql);
+		try {
+			JdbcConnection.getJdbcConnection().statement.executeUpdate(sql);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
 	}
 }

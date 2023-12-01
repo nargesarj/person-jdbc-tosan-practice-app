@@ -34,4 +34,8 @@ public interface PersonDao<T, V, E, K, L> {
 	List<L> includesAndAvg(String firstColumn, String secondColumn, String thirdColumn);
 
 	List<T> include(String column);
+
+	void save(List<Person> person);
+
+	void drop();
 }

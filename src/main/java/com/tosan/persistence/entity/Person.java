@@ -1,10 +1,10 @@
 package com.tosan.persistence.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Person {
 
-	public long id;
+	public Long id;
 
 	public String firstName;
 
@@ -16,8 +16,17 @@ public class Person {
 
 	public int score;
 
-	public Person(long id, String firstName, String lastName, Date birthdate, int gender, int score) {
+	public Person(Long id, String firstName, String lastName, Date birthdate, int gender, int score) {
 		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.birthdate = birthdate;
+		this.gender = gender;
+		this.score = score;
+	}
+	
+	public Person(String firstName, String lastName, Date birthdate, int gender, int score) {
+		this.id = null;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthdate = birthdate;

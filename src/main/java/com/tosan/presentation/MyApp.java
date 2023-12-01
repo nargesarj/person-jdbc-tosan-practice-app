@@ -7,7 +7,9 @@ import com.tosan.service.PersonService;
 public class MyApp {
 
 	public static void main(String[] args) {
-
+		
+		init();
+		
 		System.out.println("");
 		System.out.println("--------------------------------------------------------------");
 		System.out.println("getPersonInfoListFirstNameStartsWithALetter");
@@ -114,6 +116,14 @@ public class MyApp {
 		personInfoList = personService.getPersonScoreAndShowStateAndPersonInfo();
 		for (String string : personInfoList)
 			System.out.println(string);
+		
+		
 
+	}
+	
+	public static void init() {
+		PersonService personService = new PersonService();
+		personService.dropAllPersons();
+		personService.insertDefaultPersonList();
 	}
 }
